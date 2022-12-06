@@ -123,7 +123,11 @@
         <h2 class="mt-5">Orignial Model from Literature</h2>
 
         <p>
-			Details about the model here, add your model images below
+			The model we chose as our baseline was the colorful
+image colorization. The model relies on a feature extractor using CNNs similar to the
+traditional VGG 16 network but with fewer layers. The extracted feature semantics are later passed
+to a softmax layer which produces probability distribution of the colors in
+the form of a_b channels which will be later concatenated with L channel (grey-scale image)
 		</p>
 
 		<br/> <!-- Empty Line before the image -->
@@ -139,12 +143,17 @@
         <h2 class="mt-5">Proposed Updates</h2>
 
         <p>
-			Add all the model updates you made here, need as many images as you wish
+			This model was chosen in particular as it was the best candidate
+in terms of possible updates which will be listed below.
 		</p>
 
-		<h5 class="mt-5">Update #1: Used new bla bla</h5>
+		<h5 class="mt-5">Update #1: Introduced a new evaluation metric</h5>
 		<p>
-			details here
+			A new evaluation metric was used to ensure objective evaluation for
+all tested images instead of the traditional turing test which is subjective by nature and
+Pixel by Pixel evaluation metric which can harshly penalize plausible images if they didn't 
+match the original image's colors. This was done using VGG16 where the output and ground truth
+images were passed to the network and had their classification results compared
 		</p>
 		<br/> <!-- Empty Line before the image -->
 	    <div class="img-container" align="center"> <!-- Block parent element -->
@@ -152,16 +161,29 @@
     	</div>
     	<br/> <!-- Empty Line after the image -->
 
-		<h5 class="mt-5">Update #2: Used new whatever</h5>
+		<h5 class="mt-5">Update #2: Apply axial transformation</h5>
 		<p>
-			details here
+			Axial transformation was used to extract the high level features using
+an multiheaded attention layer. This will lead to overall better results as it was the main cause behind the
+state of the art results.
 		</p>
 		<br/> <!-- Empty Line before the image -->
 	    <div class="img-container" align="center"> <!-- Block parent element -->
       		<img src="resources/images/update2.png" class="img-fluid text-center">
     	</div>
     	<br/> <!-- Empty Line after the image -->
-      </div>
+       <h5 class="mt-5">Update #3: Apply fusion layer</h5>
+		<p>
+			A fusion layer would be used after the feature extraction, whether by the convolution
+layers or the attention layers in order to combine the semantics extracted from the image to get better sense of the
+scenery and result in better overall colors.
+		</p>
+		<br/> <!-- Empty Line before the image -->
+	    <div class="img-container" align="center"> <!-- Block parent element -->
+      		<img src="resources/images/update2.png" class="img-fluid text-center">
+    	</div>
+    	<br/> <!-- Empty Line after the image -->
+       </div>
     </div>
 
 
@@ -187,16 +209,12 @@
       <div class="col-lg-12 text-left">
         <h2 class="mt-5">Technical report</h2>
 
-        <p>
-			Here you will detail the details related to training, for example:
-		</p>
-
 	 	<ul>
-		  <li>Programming framework</li>
-		  <li>Training hardware i.e. colab or azure or anything else</li>
-		  <li>Training time</li>
-		  <li>Number of epochs</li>
-		  <li>Time per epoch</li>
+		  <li>Programming framework: Pytorch</li>
+		  <li>Training hardware: trained locally using devices gpu</li>
+		  <li>Training time: 7 hours</li>
+		  <li>Number of epochs: 20 epochs</li>
+		  <li>Time per epoch: 21 minutes</li>
 		  <li>Any other important detail or difficulties</li>
 		</ul> 
       </div>
